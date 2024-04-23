@@ -52,6 +52,14 @@ Pytorch is suggested to update with version `1.12.1` or higher. I will try more 
 
 ### And So On
 
+## Loss Function
+
+We take use of BinaryCrossEntropy and [lovasz-hinge](https://openaccess.thecvf.com/content_cvpr_2018/papers/Berman_The_LovaSz-Softmax_Loss_CVPR_2018_paper.pdf) to supervise the segmentation. 
+
+```latex
+L = L_{bce} + 0.2\times L_{hinge}
+```
+
 
 
 ## Model ZOO and CMD
