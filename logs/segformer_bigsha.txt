@@ -1,0 +1,127 @@
+2024-04-23 00:05:40,320 segformer INFO: ----------------------NEW RUN----------------------------
+2024-04-23 00:05:40,320 segformer INFO: -------------------Basic Setting-------------------------
+2024-04-23 00:05:40,320 segformer INFO: ---work place in: ./output/segformer/SegFormer/BIGSHA_exp_3e4---
+2024-04-23 00:05:40,320 segformer INFO: Img_size: 512
+2024-04-23 00:05:40,320 segformer INFO: BATCH_SIZE: 16
+2024-04-23 00:05:40,321 segformer INFO: scheduler: Namespace(IS_USE=1, MILESTONGS=[9999999], GAMMA=0.8)
+2024-04-23 00:05:40,321 segformer INFO: lr: 0.0003
+2024-04-23 00:05:40,321 segformer INFO: optim: AdamW
+2024-04-23 00:05:40,321 segformer INFO: --------------------USE segformer-----------------------
+2024-04-23 00:05:40,321 segformer INFO: Using 4 GPU for training, fp16 mix_precision used.
+2024-04-23 00:05:42,624 segformer INFO: -----------------Finish dataloader----------------
+2024-04-23 00:05:43,788 segformer INFO: ----------------Starting training------------------
+2024-04-23 00:05:43,788 segformer INFO: --------------Total  50 Epochs--------------
+2024-04-23 00:07:01,237 segformer INFO: Current step:10, loss:0.731285035610199, epoch:1, lr:0.0003
+2024-04-23 00:07:55,727 segformer INFO: Current step:20, loss:0.5131847858428955, epoch:2, lr:0.0003
+2024-04-23 00:09:10,396 segformer INFO: Current step:30, loss:0.5238968729972839, epoch:3, lr:0.0003
+2024-04-23 00:10:26,573 segformer INFO: Current step:40, loss:0.3638119101524353, epoch:4, lr:0.0003
+2024-04-23 00:11:07,263 segformer INFO: Current step:50, loss:0.33634644746780396, epoch:4, lr:0.0003
+2024-04-23 00:11:08,640 segformer INFO: ----------------Save ckpt_epoch4------------------
+2024-04-23 00:11:10,015 segformer INFO: ----------Starting Testing, now is step:52 epoch:4-----------
+2024-04-23 00:11:17,934 segformer INFO: --------------------RECORD MATRICX----------------------
+2024-04-23 00:12:02,285 segformer INFO: IoU:0.4179459848669627,MAE:0.06377514435120184,BER:21.99233759331599,SBER:43.3400284549463,NBER:0.6446467316856967
+2024-04-23 00:13:16,797 segformer INFO: Current step:60, loss:0.3529157042503357, epoch:5, lr:0.0003
+2024-04-23 00:14:11,515 segformer INFO: Current step:70, loss:0.3039063811302185, epoch:6, lr:0.0003
+2024-04-23 00:15:26,228 segformer INFO: Current step:80, loss:0.2649099826812744, epoch:7, lr:0.0003
+2024-04-23 00:15:56,589 segformer INFO: Current step:90, loss:0.23570135235786438, epoch:7, lr:0.0003
+2024-04-23 00:17:11,623 segformer INFO: Current step:100, loss:0.24440225958824158, epoch:8, lr:0.0003
+2024-04-23 00:17:16,384 segformer INFO: ----------------Save ckpt_epoch8------------------
+2024-04-23 00:17:17,330 segformer INFO: ----------Starting Testing, now is step:104 epoch:8-----------
+2024-04-23 00:17:25,524 segformer INFO: --------------------RECORD MATRICX----------------------
+2024-04-23 00:18:02,298 segformer INFO: IoU:0.48580767554210263,MAE:0.05694873956229527,BER:19.001443154603514,SBER:37.21536341670976,NBER:0.7875228924972788
+2024-04-23 00:18:54,733 segformer INFO: Current step:110, loss:0.24098823964595795, epoch:9, lr:0.0003
+2024-04-23 00:20:08,666 segformer INFO: Current step:120, loss:0.2034282386302948, epoch:10, lr:0.0003
+2024-04-23 00:20:42,356 segformer INFO: Current step:130, loss:0.24185678362846375, epoch:10, lr:0.0003
+2024-04-23 00:21:59,069 segformer INFO: Current step:140, loss:0.34649208188056946, epoch:11, lr:0.0003
+2024-04-23 00:22:55,495 segformer INFO: Current step:150, loss:0.2526388466358185, epoch:12, lr:0.0003
+2024-04-23 00:23:21,748 segformer INFO: ----------------Save ckpt_epoch12------------------
+2024-04-23 00:23:22,677 segformer INFO: ----------Starting Testing, now is step:156 epoch:12-----------
+2024-04-23 00:23:30,594 segformer INFO: --------------------RECORD MATRICX----------------------
+2024-04-23 00:24:06,742 segformer INFO: IoU:0.4759322669340282,MAE:0.06491476924001077,BER:22.006730487414334,SBER:43.22304904074209,NBER:0.7904119340865634
+2024-04-23 00:24:58,921 segformer INFO: Current step:160, loss:0.28755319118499756, epoch:13, lr:0.0003
+2024-04-23 00:26:10,437 segformer INFO: Current step:170, loss:0.2596699595451355, epoch:14, lr:0.0003
+2024-04-23 00:26:40,018 segformer INFO: Current step:180, loss:0.23568037152290344, epoch:14, lr:0.0003
+2024-04-23 00:27:59,371 segformer INFO: Current step:190, loss:0.2135433852672577, epoch:15, lr:0.0003
+2024-04-23 00:28:54,897 segformer INFO: Current step:200, loss:0.20778533816337585, epoch:16, lr:0.0003
+2024-04-23 00:29:19,812 segformer INFO: ----------------Save ckpt_epoch16------------------
+2024-04-23 00:29:20,666 segformer INFO: ----------Starting Testing, now is step:208 epoch:16-----------
+2024-04-23 00:29:28,697 segformer INFO: --------------------RECORD MATRICX----------------------
+2024-04-23 00:30:05,455 segformer INFO: IoU:0.5732421635194469,MAE:0.048077310644017525,BER:14.23736185630229,SBER:27.242960891739827,NBER:1.2317628208647449
+2024-04-23 00:30:56,560 segformer INFO: Current step:210, loss:0.2778022885322571, epoch:17, lr:0.0003
+2024-04-23 00:31:21,947 segformer INFO: Current step:220, loss:0.1608365774154663, epoch:17, lr:0.0003
+2024-04-23 00:32:40,273 segformer INFO: Current step:230, loss:0.19648614525794983, epoch:18, lr:0.0003
+2024-04-23 00:33:37,524 segformer INFO: Current step:240, loss:0.20765261352062225, epoch:19, lr:0.0003
+2024-04-23 00:34:56,132 segformer INFO: Current step:250, loss:0.17553618550300598, epoch:20, lr:0.0003
+2024-04-23 00:35:25,940 segformer INFO: Current step:260, loss:0.1749187707901001, epoch:20, lr:0.0003
+2024-04-23 00:35:25,952 segformer INFO: ----------------Save ckpt_epoch20------------------
+2024-04-23 00:35:26,996 segformer INFO: ----------Starting Testing, now is step:260 epoch:20-----------
+2024-04-23 00:35:34,782 segformer INFO: --------------------RECORD MATRICX----------------------
+2024-04-23 00:36:12,869 segformer INFO: IoU:0.5156461651786229,MAE:0.054316140817028506,BER:16.947146666390157,SBER:32.7188096376005,NBER:1.1754836951798069
+2024-04-23 00:37:29,182 segformer INFO: Current step:270, loss:0.2223612368106842, epoch:21, lr:0.0003
+2024-04-23 00:38:29,666 segformer INFO: Current step:280, loss:0.22329381108283997, epoch:22, lr:0.0003
+2024-04-23 00:39:40,837 segformer INFO: Current step:290, loss:0.20271803438663483, epoch:23, lr:0.0003
+2024-04-23 00:41:01,592 segformer INFO: Current step:300, loss:0.17054861783981323, epoch:24, lr:0.0003
+2024-04-23 00:41:29,141 segformer INFO: Current step:310, loss:0.15661196410655975, epoch:24, lr:0.0003
+2024-04-23 00:41:30,548 segformer INFO: ----------------Save ckpt_epoch24------------------
+2024-04-23 00:41:31,661 segformer INFO: ----------Starting Testing, now is step:312 epoch:24-----------
+2024-04-23 00:41:39,001 segformer INFO: --------------------RECORD MATRICX----------------------
+2024-04-23 00:42:16,510 segformer INFO: IoU:0.457235688101045,MAE:0.06440940686594354,BER:22.31805310484974,SBER:44.197507576117765,NBER:0.43859863358171935
+2024-04-23 00:43:28,407 segformer INFO: Current step:320, loss:0.2713609039783478, epoch:25, lr:0.0003
+2024-04-23 00:44:29,269 segformer INFO: Current step:330, loss:0.20695854723453522, epoch:26, lr:0.0003
+2024-04-23 00:45:48,892 segformer INFO: Current step:340, loss:0.20744134485721588, epoch:27, lr:0.0003
+2024-04-23 00:46:16,553 segformer INFO: Current step:350, loss:0.21748940646648407, epoch:27, lr:0.0003
+2024-04-23 00:47:40,060 segformer INFO: Current step:360, loss:0.1982305645942688, epoch:28, lr:0.0003
+2024-04-23 00:47:42,731 segformer INFO: ----------------Save ckpt_epoch28------------------
+2024-04-23 00:47:43,754 segformer INFO: ----------Starting Testing, now is step:364 epoch:28-----------
+2024-04-23 00:47:51,699 segformer INFO: --------------------RECORD MATRICX----------------------
+2024-04-23 00:48:28,126 segformer INFO: IoU:0.5653115949996984,MAE:0.0569270368352291,BER:15.052360468700382,SBER:27.823374617826147,NBER:2.2813463195746095
+2024-04-23 00:49:21,255 segformer INFO: Current step:370, loss:0.18140655755996704, epoch:29, lr:0.0003
+2024-04-23 00:50:40,521 segformer INFO: Current step:380, loss:0.21282798051834106, epoch:30, lr:0.0003
+2024-04-23 00:51:09,947 segformer INFO: Current step:390, loss:0.1870785653591156, epoch:30, lr:0.0003
+2024-04-23 00:52:33,378 segformer INFO: Current step:400, loss:0.24831414222717285, epoch:31, lr:0.0003
+2024-04-23 00:53:31,830 segformer INFO: Current step:410, loss:0.15530604124069214, epoch:32, lr:0.0003
+2024-04-23 00:53:55,851 segformer INFO: ----------------Save ckpt_epoch32------------------
+2024-04-23 00:53:56,959 segformer INFO: ----------Starting Testing, now is step:416 epoch:32-----------
+2024-04-23 00:54:05,316 segformer INFO: --------------------RECORD MATRICX----------------------
+2024-04-23 00:54:41,736 segformer INFO: IoU:0.49497197441184826,MAE:0.0560384479438767,BER:18.515555083160155,SBER:36.385217279826634,NBER:0.6458928864936695
+2024-04-23 00:55:38,631 segformer INFO: Current step:420, loss:0.1933782994747162, epoch:33, lr:0.0003
+2024-04-23 00:56:50,663 segformer INFO: Current step:430, loss:0.2564549446105957, epoch:34, lr:0.0003
+2024-04-23 00:57:23,032 segformer INFO: Current step:440, loss:0.19109542667865753, epoch:34, lr:0.0003
+2024-04-23 00:58:38,967 segformer INFO: Current step:450, loss:0.17981183528900146, epoch:35, lr:0.0003
+2024-04-23 00:59:37,287 segformer INFO: Current step:460, loss:0.15876904129981995, epoch:36, lr:0.0003
+2024-04-23 01:00:01,814 segformer INFO: ----------------Save ckpt_epoch36------------------
+2024-04-23 01:00:02,747 segformer INFO: ----------Starting Testing, now is step:468 epoch:36-----------
+2024-04-23 01:00:10,746 segformer INFO: --------------------RECORD MATRICX----------------------
+2024-04-23 01:00:47,611 segformer INFO: IoU:0.5574141972173342,MAE:0.05277716336658847,BER:13.74421783156638,SBER:25.5367452061343,NBER:1.951690456998449
+2024-04-23 01:01:42,746 segformer INFO: Current step:470, loss:0.18648770451545715, epoch:37, lr:0.0003
+2024-04-23 01:02:10,341 segformer INFO: Current step:480, loss:0.17218098044395447, epoch:37, lr:0.0003
+2024-04-23 01:03:24,702 segformer INFO: Current step:490, loss:0.15774230659008026, epoch:38, lr:0.0003
+2024-04-23 01:04:25,895 segformer INFO: Current step:500, loss:0.18389105796813965, epoch:39, lr:0.0003
+2024-04-23 01:05:49,779 segformer INFO: Current step:510, loss:0.2047191560268402, epoch:40, lr:0.0003
+2024-04-23 01:06:13,000 segformer INFO: Current step:520, loss:0.1780133843421936, epoch:40, lr:0.0003
+2024-04-23 01:06:13,017 segformer INFO: ----------------Save ckpt_epoch40------------------
+2024-04-23 01:06:14,191 segformer INFO: ----------Starting Testing, now is step:520 epoch:40-----------
+2024-04-23 01:06:22,160 segformer INFO: --------------------RECORD MATRICX----------------------
+2024-04-23 01:06:59,370 segformer INFO: IoU:0.5573012708107753,MAE:0.053064522860543716,BER:16.349352953181455,SBER:31.55953610691455,NBER:1.139169799448382
+2024-04-23 01:08:15,176 segformer INFO: Current step:530, loss:0.20380738377571106, epoch:41, lr:0.0003
+2024-04-23 01:09:11,913 segformer INFO: Current step:540, loss:0.18155255913734436, epoch:42, lr:0.0003
+2024-04-23 01:10:32,506 segformer INFO: Current step:550, loss:0.1392597258090973, epoch:43, lr:0.0003
+2024-04-23 01:11:49,788 segformer INFO: Current step:560, loss:0.16979661583900452, epoch:44, lr:0.0003
+2024-04-23 01:12:18,975 segformer INFO: Current step:570, loss:0.23000548779964447, epoch:44, lr:0.0003
+2024-04-23 01:12:20,671 segformer INFO: ----------------Save ckpt_epoch44------------------
+2024-04-23 01:12:21,599 segformer INFO: ----------Starting Testing, now is step:572 epoch:44-----------
+2024-04-23 01:12:29,297 segformer INFO: --------------------RECORD MATRICX----------------------
+2024-04-23 01:13:07,272 segformer INFO: IoU:0.5604242372090492,MAE:0.05488215562775602,BER:15.305892601201599,SBER:28.856069559161483,NBER:1.7557156432417003
+2024-04-23 01:14:20,014 segformer INFO: Current step:580, loss:0.1229778304696083, epoch:45, lr:0.0003
+2024-04-23 01:15:14,346 segformer INFO: Current step:590, loss:0.17236818373203278, epoch:46, lr:0.0003
+2024-04-23 01:16:29,320 segformer INFO: Current step:600, loss:0.1291525959968567, epoch:47, lr:0.0003
+2024-04-23 01:16:59,381 segformer INFO: Current step:610, loss:0.15485800802707672, epoch:47, lr:0.0003
+2024-04-23 01:18:14,143 segformer INFO: Current step:620, loss:0.1452949196100235, epoch:48, lr:0.0003
+2024-04-23 01:18:17,921 segformer INFO: ----------------Save ckpt_epoch48------------------
+2024-04-23 01:18:18,701 segformer INFO: ----------Starting Testing, now is step:624 epoch:48-----------
+2024-04-23 01:18:26,548 segformer INFO: --------------------RECORD MATRICX----------------------
+2024-04-23 01:19:03,564 segformer INFO: IoU:0.5607953798531016,MAE:0.052438470399327974,BER:16.16722700884834,SBER:31.262108029147115,NBER:1.0723459885495572
+2024-04-23 01:19:56,994 segformer INFO: Current step:630, loss:0.18209627270698547, epoch:49, lr:0.0003
+2024-04-23 01:21:21,148 segformer INFO: Current step:640, loss:0.14536240696907043, epoch:50, lr:0.0003
+2024-04-23 01:21:44,634 segformer INFO: Current step:650, loss:0.13279223442077637, epoch:50, lr:0.0003
+2024-04-23 01:21:44,664 segformer INFO: ----------------------END RUN----------------------------

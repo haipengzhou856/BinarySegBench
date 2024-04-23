@@ -20,7 +20,7 @@ accelerate launch --config_file accelerate_cfg.yaml inference.py --config "./con
 
 **Check with me**
 
-My implement details about Logs is in ([Google Drive(TODO)]())
+My implement details about Logs is in `logs/segformer_bigsha.txt`, [here](../logs/segformer_bigsha.txt)
 
 
 
