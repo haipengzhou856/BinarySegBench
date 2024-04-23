@@ -12,7 +12,7 @@ In a sum, we:
 
 <center><b>Give me some time to construct this project :)</b></center>
 
-![image-20240423135237987](.\asset\image-20240423135237987.png)
+![image-20240423135237987](./asset/image-20240423135237987.png)
 
 
 
