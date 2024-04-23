@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This project aims to build up a benchmark for **fair and solid comparisons** with the *state-of-the-art* segmentation methods. Motivate by [sssegmentation](https://github.com/SegmentationBLWX/sssegmentation), we hope to excel at the **Binary Segmentation** which is prevailing in minority tasks but matters, e.g., **Shadow Detection, Camouflage Object Detection, Saliency Object Detection, and most of Medical Image Segmentation**. 
+This project aims to build up a benchmark for **fair and solid comparisons** with the *state-of-the-art* segmentation methods. Motivated by [sssegmentation](https://github.com/SegmentationBLWX/sssegmentation), we hope to excel at the **Binary Segmentation** which is prevailing in minority tasks but also matters, e.g., **Shadow Detection, Camouflage Object Detection, Saliency Object Detection, and most of Medical Image Segmentation**. 
 
 In a sum, we:
 
@@ -34,31 +34,31 @@ Pytorch is suggested to update with version `1.12.1` or higher. I will try more 
 ### Shadow Detection
 
 * BIGSHA(coming soon): High Resolution Shadow Detection
-* [SBU](https://www3.cs.stonybrook.edu/~cvl/projects/shadow_noisy_label/index.html): Image Shadow Detection
+* [SBU](https://www3.cs.stonybrook.edu/~cvl/projects/shadow_noisy_label/index.html) (ECCV16): Image Shadow Detection
 * [CUHK-Shadow ](https://github.com/xw-hu/CUHK-Shadow)(TIP21): Image Shadow Detection, larger one 
-
-
 
 ### Camouflaged object detection
 
 * [COD10K](https://openaccess.thecvf.com/content_CVPR_2020/papers/Fan_Camouflaged_Object_Detection_CVPR_2020_paper.pdf) (CVPR20): Image Camouflaged object detection
 
-
-
 ### Transparent Segmentation
 
 *  [Trans10k ](https://xieenze.github.io/projects/TransLAB/TransLAB.html)(ECCV20) : Transparent objects segmentation:
-
-
 
 ### Medical Image Segmentation
 
 *  [ISIC ](https://www.isic-archive.com/): Skin Lesion Segmentation
 * [BUSI](https://www.kaggle.com/datasets/aryashah2k/breast-ultrasound-images-dataset) : Breast Cancer Ultrasound Image Segmentation
 
-## Model ZOO
+### And So On
 
-Please click the details to check the documents, including commands, ckpt and logs.
+
+
+## Model ZOO and CMD
+
+* Please click the details to check the documents, including commands, ckpt and logs.
+
+* Please modify the pretrained path in the `CustomCode` in your own server.
 
 | Model                                                        | Pretrained or Backbone                                       | BIGSHA (coming soon)                    | Trans10K                                | TODO |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | --------------------------------------- | --------------------------------------- | ---- |
@@ -70,9 +70,11 @@ Please click the details to check the documents, including commands, ckpt and lo
 
 ## Future works
 
-So many blank need to fill  :)
+So many blanks need to fill  :)
 
 Keep Patience :)
+
+Drop emails to haipengzhou856@gmail.com or directly post the issues here if you have any question.
 
 ## Acknowledgement
 
