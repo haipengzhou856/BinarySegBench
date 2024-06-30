@@ -6,8 +6,8 @@ This project aims to build up a benchmark for **fair and solid comparisons** wit
 
 In a sum, we:
 
-* Present read and deployment friendly codes for Training/Testing
-* Present wide range of cutting-edge methods comparisons with several datasets
+* Present read and deployment-friendly codes for Training/Testing
+* Present a wide range of cutting-edge methods comparisons with several datasets
 * Provide full experiment details including the logs, ~~tensorboard~~（too large, forget it **😅**）, and ckpt
 
 <center><b>Give me some time to construct this project :)</b></center>
@@ -29,7 +29,7 @@ pip install transformers
 
 Pytorch is suggested to update with version `1.12.1` or higher. I will try more efficient implementations with [Flash Attention](https://pytorch.org/blog/pytorch2-2/) , [Torch Compile](https://pytorch.org/tutorials/intermediate/torch_compile_tutorial.html) and etc. in the future.
 
-## Datasets
+## Support Datasets
 
 ### Shadow Detection
 
@@ -47,34 +47,24 @@ Pytorch is suggested to update with version `1.12.1` or higher. I will try more 
 
 ### Medical Image Segmentation
 
-*  [ISIC ](https://www.isic-archive.com/): Skin Lesion Segmentation
-* [BUSI](https://www.kaggle.com/datasets/aryashah2k/breast-ultrasound-images-dataset) : Breast Cancer Ultrasound Image Segmentation
+*  [ISIC [RGB image] ](https://www.isic-archive.com/): Skin Lesion Segmentation, 
+*  [BUSI [ultrasound]](https://www.kaggle.com/datasets/aryashah2k/breast-ultrasound-images-dataset) : Breast Cancer Ultrasound Image Segmentation
+*  BCN[pathology]: Breast Cancer Mitosis Nuclei Segmentation
+*  MHSI[pathology] : Melanoma Segmentation
+*  GlaS [pathology] : Intestinal Glandular Structures Segmentation
 
 ### And So On
 
 
 
-## Loss Function
+## Detailed Documents
 
-We take use of BinaryCrossEntropy and [lovasz-hinge](https://openaccess.thecvf.com/content_cvpr_2018/papers/Berman_The_LovaSz-Softmax_Loss_CVPR_2018_paper.pdf) to supervise the segmentation. 
+Please check the corresponding doc to find the **model card, implement configs, and visualization**
 
-$L = L_{bce} + 0.2\times L_{hinge}$
+* Interest on **Natural Scenario** ?       👉️👉️👉️ Check  [Natural Scenario Documents (TODO)](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+* Interest on **Medical Images** ?          👉️👉️👉️ Check  [Medical Documents (TODO)](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 
 
-
-## Model ZOO and CMD
-
-* Please click the details to check the documents, including commands, ckpt and logs.
-
-* Please modify the pretrained path in the `CustomCode` in your own server.
-
-| Model                                                        | Pretrained or Backbone                                       | BIGSHA (coming soon)                    | Trans10K                                | TODO |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | --------------------------------------- | --------------------------------------- | ---- |
-| Segformer [[Paper](https://proceedings.neurips.cc/paper/2021/file/64f1f27bf1b4ec22924fd0acb550c235-Paper.pdf)] [[CustomCode](./benchmarks/segformer.py)] | [MiT-B3](https://huggingface.co/nvidia/segformer-b3-finetuned-ade-512-512/tree/main) | [Click See Details](./doc/Segformer.md) | [Click See Details](./doc/Segformer.md) |      |
-| Deeplabv3 [[Paper](https://arxiv.org/abs/1802.02611)] [[CustomCode](./benchmarks/deeplab.py)] | [ResNet-101](https://download.pytorch.org/models/deeplabv3_resnet101_coco-586e9e4e.pth) | TODO                                    | TODO                                    |      |
-| UperNet+Swin-B [[Paper](https://openaccess.thecvf.com/content_ECCV_2018/papers/Tete_Xiao_Unified_Perceptual_Parsing_ECCV_2018_paper.pdf)] [[CustomCode](./benchmarks/UperNet.py)] | [Swin-B](https://huggingface.co/openmmlab/upernet-swin-base/tree/main) | TODO                                    | TODO                                    |      |
-| VMamba [[Paper](https://arxiv.org/abs/2401.10166)] [CustomCode (TODO)] | TODO                                                         | TODO                                    | TODO                                    |      |
-| TODO MORE                                                    | TODO                                                         | TODO                                    | TODO                                    |      |
 
 ## Future works
 
@@ -82,12 +72,23 @@ So many blanks need to fill  :)
 
 Keep Patience :)
 
-Drop emails to haipengzhou856@gmail.com or directly post the issues here if you have any question.
+Drop emails to haipengzhou856@gmail.com or directly post the issues here if you have any questions.
+
+
 
 ## Acknowledgement
 
-Thanks for all the open-source contributors. Please considering those reproduced methods.
+Thanks for all the open-source and code-sharing contributors. 
+
+Please considering to cite those datasets and the reproduced methods.
+
+This codebase is built on  **[HuggingFace](https://huggingface.co/)🤗**.
 
 ## License
 
-Currently, this project is non-commercial and only for academic usage.
+Currently, the project is under CC BY-NC 2.0, **Any kinds of modification is welcome**.
+
+But **Forbidden **Commercial Usage.
+
+All Copyright **©** [Rydeen, Haipeng ZHOU](https://haipengzhou856.github.io/)
+
