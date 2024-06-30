@@ -62,7 +62,7 @@ Pytorch is suggested to update with version `1.12.1` or higher. I will try more 
 Please check the corresponding doc to find the **model card, implement configs, and visualization**
 
 * Interest on **Natural Scenario** ?       👉️👉️👉️ Check  [Natural Scenario Documents (TODO)](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
-* Interest on **Medical Images** ?          👉️👉️👉️ Check  [Medical Documents (TODO)](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+* Interest on **Medical Images** ?         👉️👉️👉️ Check  [Medical Documents (TODO)](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 
 
 
@@ -88,7 +88,7 @@ This codebase is built on  **[HuggingFace](https://huggingface.co/)🤗**.
 
 Currently, the project is under CC BY-NC 2.0, **Any kinds of modification is welcome**.
 
-But **Forbidden **Commercial Usage.
+But **Forbidden** Commercial Usage.
 
 All Copyright **©** [Rydeen, Haipeng ZHOU](https://haipengzhou856.github.io/)
 
