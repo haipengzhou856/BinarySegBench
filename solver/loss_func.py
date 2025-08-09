@@ -6,6 +6,12 @@ from collections import defaultdict
 from torch.autograd import Variable
 from torch.nn import BCEWithLogitsLoss, CrossEntropyLoss
 import torch
+from torch import Tensor
+
+def silog_loss(pred: Tensor, target: Tensor):
+    log_diff = torch.log(pred) - torch.log(target)
+    silog = torch.sqrt(torch.mean(log_diff ** 2) - torch.mean(log_diff) ** 2)
+    return silog
 
 def bce_loss(logits, labels):
     upsampled_logits = F.interpolate(
@@ -15,6 +21,19 @@ def bce_loss(logits, labels):
     loss_fct = BCEWithLogitsLoss(reduction="none")
     loss = loss_fct(upsampled_logits.squeeze(1), labels[:,0].float())
     loss = (loss * valid_mask).mean()
+    return loss
+
+def iou_loss(logits, labels, smooth=1e-6):
+    upsampled_logits = F.interpolate(
+        logits, size=labels.shape[-2:], mode="bilinear", align_corners=False
+    )
+    probs = torch.sigmoid(upsampled_logits.squeeze(1))
+    valid_mask = (labels >= 0).float()
+    target = labels[:, 0].float() * valid_mask
+    intersection = (probs * target).sum(dim=(1,2))
+    union = (probs + target).sum(dim=(1,2)) - intersection
+    iou = (intersection + smooth) / (union + smooth)
+    loss = 1 - iou.mean()
     return loss
 
 def ce_loss(logits, labels):
@@ -119,4 +138,3 @@ def flatten_binary_scores(scores, labels, ignore=None):
     vscores = scores[valid]
     vlabels = labels[valid]
     return vscores, vlabels
-

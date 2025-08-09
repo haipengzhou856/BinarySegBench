@@ -1,39 +1,50 @@
 import torch
 from timm.scheduler import CosineLRScheduler
+from torch.optim.lr_scheduler import _LRScheduler
 
+import torch
 
 def build_optimizer(cfg, model):
-    lr = cfg.SOLVER.OPTIM.LR
-    momentum = cfg.SOLVER.OPTIM.MOMENTUM
-    decay = cfg.SOLVER.OPTIM.DECAY
+    lr = cfg.SOLVER.LR
+    decay = cfg.SOLVER.DECAY
+    momentum = cfg.SOLVER.SGD_MOMENTUM
 
-    if cfg.SOLVER.OPTIM.NAME == "SGD":
-        optimizer = torch.optim.SGD(params=model.parameters(),
-                                    lr=lr, momentum=momentum, weight_decay=decay)
-    elif cfg.SOLVER.OPTIM.NAME == "AdamW":
-        optimizer = torch.optim.AdamW(params=model.parameters(),
-                                      lr=lr, weight_decay=decay)
-    elif cfg.SOLVER.OPTIM.NAME == "Adam":
-        optimizer = torch.optim.Adam(params=model.parameters(),
-                                     lr=lr, weight_decay=decay)
+    base_lr = lr
+    head_lr = lr * 3
+
+    param_groups = [
+        {'params': [], 'lr': base_lr},
+        {'params': [], 'lr': head_lr}
+    ]
+    for name, param in model.named_parameters():
+        if 'head' in name:
+            param_groups[1]['params'].append(param)
+        else:
+            param_groups[0]['params'].append(param)
+
+    if cfg.SOLVER.OPTIMIZER == "SGD":
+        optimizer = torch.optim.SGD(model.parameters(), lr=lr, momentum=momentum, weight_decay=decay)
+
+    elif cfg.SOLVER.OPTIMIZER == "AdamW":
+        #optimizer = torch.optim.AdamW(model.parameters(),lr=lr, weight_decay=decay)
+        optimizer = torch.optim.AdamW(param_groups, lr=lr, weight_decay=decay)
+
+    elif cfg.SOLVER.OPTIMIZER == "Adam":
+        optimizer = torch.optim.Adam(model.parameters(), lr=lr, weight_decay=decay)
+
     else:
-        raise ValueError(f"Unsupported optimizer: {cfg.SOLVER.OPTIM.NAME}")
-    return optimizer
+        raise ValueError(f"Unsupported optimizer: {cfg.SOLVER.OPTIMIZER}")
 
+    return optimizer
 
 def build_scheduler(cfg, optimizer):
     total_epoch = cfg.SOLVER.EPOCH
+    milestones = [3000,6000,9000]
+    gamma = cfg.SOLVER.STEP_GAMMA
 
-    if cfg.SOLVER.LINEAR_SCHEDULE.IS_USE == 1:
-        scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones=cfg.SOLVER.LINEAR_SCHEDULE.MILESTONGS,
-                                                         gamma=cfg.SOLVER.LINEAR_SCHEDULE.GAMMA, last_epoch=-1)
-    elif cfg.SOLVER.CA_SCHEDULE.IS_USE == 1:
-        scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=cfg.SOLVER.CA_SCHEDULE.TMAX,
-                                                               last_epoch=-1)
-    elif cfg.SOLVER.CLR_SCEDULE.IS_USE == 1:
-        scheduler = CosineLRScheduler(optimizer, warmup_lr_init=cfg.SOLVER.CLR_SCEDULE.WARM_LR, t_initial=total_epoch,
-                                      cycle_decay=cfg.SOLVER.CLR_SCEDULE.CYCLE_DECAY,
-                                      warmup_t=cfg.SOLVER.CLR_SCEDULE.WARM_EPOCH)
+    if cfg.SOLVER.SCHEDULER == "Linear":
+        scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones=milestones, gamma=gamma, last_epoch=-1)
     else:
-        raise ValueError(f"Unsupported lr_schduler: {cfg.SOLVER.LR_SCHEDULE}")
+        raise ValueError(f"Unsupported lr_scheduler: {cfg.SOLVER.LR_SCHEDULE}")
     return scheduler
+

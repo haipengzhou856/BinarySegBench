@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This project aims to build up a benchmark for **fair and solid comparisons** with the *state-of-the-art* segmentation methods. Motivated by [sssegmentation](https://github.com/SegmentationBLWX/sssegmentation), we hope to excel at the **Binary Segmentation** which is prevailing in minority tasks but also matters, e.g., **Shadow Detection, Camouflage Object Detection, Saliency Object Detection, and most of Medical Image Segmentation**. 
+This project aims to build up a benchmark for **fair and solid comparisons** with the *state-of-the-art* segmentation methods. Motivated by [sssegmentation](https://github.com/SegmentationBLWX/sssegmentation), we hope to excel at the **Binary Segmentation & Matting task** which is prevailing in minority tasks but also matters, e.g., **Shadow Detection, Camouflage Object Detection, Saliency Object Detection, and most of Medical Image Segmentation**. 
 
 In a sum, we:
 
@@ -20,16 +20,29 @@ In a sum, we:
 
 The codes mainly rely on the **[HuggingFace](https://huggingface.co/)🤗**, including the Distributed Training (**[Accelerate](https://huggingface.co/docs/accelerate/index)**), Model Architecture (**[Transformers](https://huggingface.co/docs/transformers/index)**).
 
-My stable version for these packages are:
+**Must have Packages:** 
 
 ```
-pip install accelerate==0.20.3
-pip install transformers
+pip install accelerate    # distribute training
+pip install xformers	  # flash attn accleration
+pip install torch>=2.6.0  # stable version 
 ```
 
-Pytorch is suggested to update with version `1.12.1` or higher. I will try more efficient implementations with [Flash Attention](https://pytorch.org/blog/pytorch2-2/) , [Torch Compile](https://pytorch.org/tutorials/intermediate/torch_compile_tutorial.html) and etc. in the future.
 
-## Support Datasets
+
+## Notation:
+
+Currently, for my convenience, **I have fixed some parameters for some gpu platform (e.g., I have to mount different storage)**
+
+* The dataset path in `main.py`
+* The output path in `main.py`
+* The model weights. Please carefully check and replace with yours.
+
+
+
+
+
+## Datasets
 
 ### Shadow Detection
 
