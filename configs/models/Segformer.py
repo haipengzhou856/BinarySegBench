@@ -12,7 +12,7 @@ def extend_cfg(cfg):
         cfg.TRAINER.MY_MODEL.PARAM_C = False
     """
     cfg.MODEL.Segformer = CN()
-    cfg.MODEL.Segformer.PRETRAINED_WEIGHT = '/home/haipeng/Pretrained/nvidia/segformer-b5-finetuned-ade-640-640'
+    cfg.MODEL.Segformer.PRETRAINED_WEIGHT = '/vip_media/haipeng/pretrained/hgf/nvidia/segformer-b3-finetuned-ade-512-512'
 
 
 

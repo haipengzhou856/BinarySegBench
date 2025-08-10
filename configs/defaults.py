@@ -6,11 +6,11 @@ from yacs.config import CfgNode as CN
 #####################  Env config #####################
 _C = CN()
 _C.SEED = 42
-_C.OUTPUT_DIR = '/home/haipeng/output'
-_C.LOG = '/log_path'  # logs
-_C.TB = '/tb_path'  # tensorboard
-_C.CKPT = '/ckpt_path'  # checkpoints
-_C.RESULT = '/result_path'  # result
+_C.OUTPUT_DIR = '/vip_media/haipeng/output'
+_C.LOG = 'log_path'  # logs
+_C.TB = 'tb_path'  # tensorboard
+_C.CKPT = 'ckpt_path'  # checkpoints
+_C.RESULT = 'result_path'  # result
 _C.EXP_NAME = 'debug'
 _C.RESUME_DIR = ''
 
@@ -29,7 +29,7 @@ _C.DATASET.NUM_CLASSES = 1
 
 #####################  Dataloader config #####################
 _C.DATALOADER = CN()
-_C.DATALOADER.NUM_WORKERS = 4
+_C.DATALOADER.NUM_WORKERS = 12
 _C.DATALOADER.BATCH_SIZE = 12
 #####################  Model config #####################
 ## define all the model here
@@ -43,9 +43,9 @@ _C.MODEL.NAME = 'Segformer'
 
 #####################  Solver config #####################
 _C.SOLVER = CN()
-_C.SOLVER.LR = 0.000003
+_C.SOLVER.LR = 0.00005
 _C.SOLVER.EPOCH = 30
-_C.SOLVER.STORE_EPOCH = 2
+_C.SOLVER.STORE_EPOCH = 1
 _C.SOLVER.OPTIMIZER = 'AdamW'
 _C.SOLVER.SGD_MOMENTUM = 0.9
 _C.SOLVER.DECAY = 0.001

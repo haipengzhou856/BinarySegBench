@@ -1,6 +1,4 @@
-from .ImgSegDataset import IMGDataset,SynthesisIMGDataset
-from .RefDataset import RefMatDataset
-
+from .ImgSegDataset import IMGDataset
 from torch.utils.data import DataLoader
 
 

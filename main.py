@@ -1,8 +1,8 @@
 import os
 
 # Required for 4000 Series, comment out for other models
-os.environ["NCCL_P2P_DISABLE"] = "1"
-os.environ["NCCL_IB_DISABLE"] = "1"
+#os.environ["NCCL_P2P_DISABLE"] = "1"
+#os.environ["NCCL_IB_DISABLE"] = "1"
 
 # import swanlab
 import argparse
@@ -25,9 +25,9 @@ import torch
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--dataset_config', type=str, default='configs/datasets/DIS5K.yaml',
+    parser.add_argument('--dataset_config', type=str, 
                         help='config of the dataset')
-    parser.add_argument('--model_config', type=str, default='configs/models/Segformer.py',
+    parser.add_argument('--model_config', type=str,
                         help='config of the model')
     parser.add_argument('--exp_name', type=str, default='debug_mode',
                         help='name your experiment')
