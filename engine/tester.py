@@ -9,14 +9,20 @@ import torch.nn.functional as F
 from utils.misc import masks_to_boxes, masks_sample_points, visualize_with_box_and_points
 from utils.metrix_matte import SAD, MSE, MAD, CONN, Grad
 
+from utils.metrix_seg import IoU, mBA
+
 
 def eval_func(cfg, model, test_loader, result_path, epoch, accelerator):
+    # metrics = {
+    #     "sad": SAD(),
+    #     "mse": MSE(),
+    #     # "mad": MAD(),
+    #     # "conn": CONN(),
+    #     # "grad": Grad()
+    # }
     metrics = {
-        "sad": SAD(),
-        "mse": MSE(),
-        # "mad": MAD(),
-        # "conn": CONN(),
-        # "grad": Grad()
+        "iou": IoU(),
+        "mba": mBA(),
     }
 
 
@@ -47,6 +53,9 @@ def eval_func(cfg, model, test_loader, result_path, epoch, accelerator):
 
             logits = prediction["logits"]
             logits = torch.nn.functional.interpolate(logits, labels.shape[2:], mode="bilinear", align_corners=False)
+
+            if cfg.MODEL.NAME == 'Segformer':
+                logits = torch.sigmoid(logits)
             # logits = torch.sigmoid(logits)
 
             all_logits, all_labels, all_idx = accelerator.gather_for_metrics((logits, labels, gt_idx))

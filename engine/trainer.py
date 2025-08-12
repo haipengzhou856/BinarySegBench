@@ -44,7 +44,7 @@ def training_func(cfg, accelerator, model, dataloaders, logger, writer, ckpt_pat
     best_acc = 0
     best_epoch = 0
     for epoch in range(1, total_epoch + 1):
-        outcomes = eval_func(cfg, model, test_loader, result_path, epoch, accelerator)
+        # outcomes = eval_func(cfg, model, test_loader, result_path, epoch, accelerator)
         epoch = epoch + starting_epoch
         model.train()
         for _, batch in enumerate(tqdm(train_loader)):
@@ -65,6 +65,9 @@ def training_func(cfg, accelerator, model, dataloaders, logger, writer, ckpt_pat
             logits = outputs.logits
             # align the size
             logits = torch.nn.functional.interpolate(logits, labels.shape[2:], mode="bilinear",align_corners=False)
+
+            if cfg.MODEL.NAME == 'Segformer':
+                logits = torch.sigmoid(logits)
 
             # seg loss
             #loss = bce_loss(logits, labels)  # +0.5*hinge_loss(outputs.logits, labels)
@@ -107,8 +110,10 @@ def training_func(cfg, accelerator, model, dataloaders, logger, writer, ckpt_pat
             logger.info(
                 "--------------------RECORD MATRICX----------------------")
             logger.info(f"----------------Raw Infer Time: {infer_time}------------------")
-            logger.info(f"----------------SAD: {metrix['sad']}------------------")
-            logger.info(f"----------------MSE: {metrix['mse']}------------------")
+            # logger.info(f"----------------SAD: {metrix['sad']}------------------")
+            # logger.info(f"----------------MSE: {metrix['mse']}------------------")
+            logger.info(f"----------------IoU: {metrix['iou']}------------------")
+            logger.info(f"----------------mBA: {metrix['mba']}------------------")
             #logger.info(f"----------------GRAD: {metrix['grad']}------------------") # too many time needed, omit this
             #logger.info(f"----------------CONN: {metrix['conn']}------------------") # too many time needed, omit this
             #logger.info(f"----------------MAD: {metrix['mad']}------------------")   # too many time needed, omit this
