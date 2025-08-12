@@ -6,4 +6,4 @@ main.py \
 --exp_name debug_test \
 --custom_name debug \
 --data_input /vip_media/haipeng/Data/DIS5K \
---data_output /vip_media/haipeng/output
+--data_output /vip_media/jinshan/output
